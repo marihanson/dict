@@ -34,12 +34,14 @@ while True: ## REPL - Read Execute Program Loop
     if cmd == "list":
         print(read_dict(conn))
     elif cmd == "add":
-        name = input("  Word: ")
-        phone = input("  Translation: ")
-        add_word(conn, name, phone)
+        word = input("  Word: ")
+        translation = input("  Translation: ")
+        add_word(conn, word, translation)
+        print(f" Added word {word}")
     elif cmd == "delete":
         ID = input("  ID: ")
         delete_word(conn, ID)
+        print(f" Deleted word {word}")
     elif cmd == "quit":
         save_dict(conn)
         exit()
