@@ -1,11 +1,15 @@
 import psycopg2
 conn = psycopg2.connect(
    host="localhost",
-   database="database",
-   user="user",
+   database="dict",
+   user="dict",
    password="abc123"
 )
-
+print('''   Welcome to the dictionary! Command options:
+        list - list all words and translation
+        add - add new word to the dictionary
+        delete - delete word from dictionary
+        quit - quit the program  ''')
 def read_dict(C):
     cur = C.cursor()
     cur.execute("SELECT id, word, translation FROM dictionary;")
